@@ -8,7 +8,7 @@ client = discord.Client()
 async def on_ready():
     print(client.user.id)
     print("ready")
-    game = discord.Game("아로니아 회의 보조")
+    game = discord.Game(name='', type=1)
     await client.change_presence(status=discord.Status.online, activity=game)
 
 
@@ -17,7 +17,7 @@ async def on_ready():
 async def on_message(message):
     if message.content.startswith("안녕"):
         if message.author.name != "아로니아_회의봇":
-            await message.channel.send("안녕하세요")
+            await client.send_message(massage.chanel,"안녕하세요")
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
