@@ -1,4 +1,5 @@
 import discord
+import os
 
 client = discord.Client()
 
@@ -18,5 +19,5 @@ async def on_message(message):
         if message.author.name != "아로니아_회의봇":
             await message.channel.send("안녕하세요")
 
-
-client.run("NjkzNDM0MDY3Mzg3MDIzNDIx.Xn9BEw._vJhcQNeE4R1UFFC4_F358AQ_oY")
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
