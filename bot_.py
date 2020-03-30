@@ -17,8 +17,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if message.content.startswith("안녕"):
-        if message.author.name != "아로니아_회의봇":
-            await client.send_message(massage.chanel,"안녕하세요")
+        await client.send_message(massage.chanel,"안녕하세요")
 
 access_token = os.environ["BOT_TOKEN"]
 client.run(access_token)
