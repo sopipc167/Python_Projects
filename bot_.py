@@ -10,7 +10,9 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print("ready")
+    await client.message.channel.send("ready")
     await client.change_presence(game=discord.Game(name='',type=1))
+    await client.message.channel.send("go")
 
 
 
