@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>300</width>
+    <width>319</width>
     <height>258</height>
    </rect>
   </property>
@@ -19,9 +19,12 @@
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>113</width>
+      <width>201</width>
       <height>28</height>
      </rect>
+    </property>
+    <property name="text">
+     <string notr="true"/>
     </property>
    </widget>
    <widget class="QTableWidget" name="tableWidget">
@@ -29,15 +32,30 @@
      <rect>
       <x>10</x>
       <y>30</y>
-      <width>256</width>
+      <width>301</width>
       <height>192</height>
      </rect>
     </property>
+    <column>
+     <property name="text">
+      <string>지역</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>시간</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>상태</string>
+     </property>
+    </column>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>170</x>
+      <x>220</x>
       <y>0</y>
       <width>85</width>
       <height>28</height>
@@ -53,7 +71,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>300</width>
+     <width>319</width>
      <height>28</height>
     </rect>
    </property>

@@ -20,17 +20,17 @@ class GoogleWeather():
     
     def parse_html(self, text):
         html = bs(text, 'html.parser')
-        loc = html.find('div',{'id':'wob_loc'})
-        loc = loc.string if loc else loc
-        time = html.find('div',{'id':'wob_dts'})
-        time = time.string if time else time
-        status = html.find('span',{'id':'wob_dc'})
-        status = time.string if status else status
-        self.result.append({
-            'loc':loc,
-            'time':time,
-            'status':status
-        })
+        try:
+            loc = html.find('div',{'id':'wob_loc'}).string
+            time = html.find('div',{'id':'wob_dts'}).string
+            status = html.find('span',{'id':'wob_dc'}).string
+            self.result.append({
+                'loc':loc,
+                'time':time,
+                'status':status
+            })
+        except AttributeError as e:
+            print('유효하지 않은 도시이름입니다. 다시 한번 확인해주세요')
 
     def get_result(self):
         if self.result:
@@ -42,8 +42,13 @@ if  __name__ == '__main__':
     crawler = GoogleWeather()
     while True:
         k=input('지역명 >>')
-        crawler.set_keyword(k+'날씨')
+        if (k == 'quit')
+            break
+        crawler.set_keyword(k + '날씨')
         crawler.run()
-        r=crawler.get_result()
-        for v in r.values(): print(v)
+        r = crawler.get_result()
+        print(r)
+        if (r != None): 
+            for v in r.values(): print(v)
         print('-'*50)
+#필요한 모듈 : requests, bs4
