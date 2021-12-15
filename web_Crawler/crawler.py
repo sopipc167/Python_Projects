@@ -24,6 +24,7 @@ class GoogleWeather():
             loc = html.find('div',{'id':'wob_loc'}).string
             time = html.find('div',{'id':'wob_dts'}).string
             status = html.find('span',{'id':'wob_dc'}).string
+            self.result=[]
             self.result.append({
                 'loc':loc,
                 'time':time,
@@ -42,13 +43,12 @@ if  __name__ == '__main__':
     crawler = GoogleWeather()
     while True:
         k=input('지역명 >>')
-        if (k == 'quit')
+        if (k == 'quit'):
             break
         crawler.set_keyword(k + '날씨')
         crawler.run()
         r = crawler.get_result()
-        print(r)
-        if (r != None): 
+        if r: 
             for v in r.values(): print(v)
         print('-'*50)
 #필요한 모듈 : requests, bs4
